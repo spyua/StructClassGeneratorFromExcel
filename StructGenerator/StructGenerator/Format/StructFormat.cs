@@ -31,7 +31,7 @@ namespace StructGenerator.GeneratorFactory
 
             var decodeStr = new StringBuilder();
 
-            decodeStr.Append("using System;\r\n");
+            decodeStr.Append("using System;\r\n"); 
             decodeStr.Append("using System.Runtime.InteropServices;\r\n");
             decodeStr.Append("namespace MsgStruct\r\n{\r\n");
             decodeStr.Append($"\tpublic class Msg_{OutFileName}\t\n" + "{");
@@ -69,7 +69,7 @@ namespace StructGenerator.GeneratorFactory
 
         public void GenFile()
         {
-            var genOK = _decodeStr.WriteToFile(ExportPath + "DemoMsg.cs");
+            var genOK = _decodeStr.WriteToFile(ExportPath + OutFileName  + ".cs");
 
             if (!genOK)
                 Console.WriteLine("Gen CS File Fail");
